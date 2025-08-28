@@ -38,8 +38,11 @@ from .alucard_exceptions import validate_shapes  # Ensure alucard_error.py is in
 
 logger = logging.getLogger(__name__)
 
-from ..utils.conditioning_shifter import ConditioningShifter
-from ..utils.rose_util import rose_score_magnitude, legacy_entropy as compute_entropy
+from .utils.conditioning_shifter import ConditioningShifter
+from .utils.rose_util import rose_score_magnitude, legacy_entropy as compute_entropy
+
+from .utils.rose_util import rose_score_magnitude, entropy
+
 
 @dataclass
 class FieldWalkerConfig:
@@ -175,7 +178,6 @@ class FieldWalker:
         self.pooling = WindowPooling({"pooling_mode": config.pooling_mode})
         self.core = Alucard()
 
-    from ..utils.rose_util import rose_score_magnitude, entropy
 
     def walk(
             self,

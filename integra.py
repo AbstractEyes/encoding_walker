@@ -18,7 +18,7 @@ from .formulas.folding import FoldingKernels
 from .formulas.schedules import SchedulerModes
 from .alucard_exceptions import validate_shapes  # Ensure alucard_error.py is in same directory or adjust import
 
-from ..utils.rose_util import rose_score
+from .utils.rose_util import rose_score
 
 from comfy.utils import ProgressBar
 
